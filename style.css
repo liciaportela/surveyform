@@ -1,3 +1,10 @@
+* {
+    box-sizing: border-box;
+    /* com o seletor * estamos selecionando todos os elementos e mudando o box-sizing deles para border-box, 
+    sem essa prop o input não estava respeitando o tamanho maximo do form,
+    para entender mais sobre ele joga no Google -> box-sizing mdn <- deve ser o primeiro link */
+}
+
 body {
     background-attachment: fixed;
     background-image: url(img/bg.jpg);
@@ -5,7 +12,8 @@ body {
     background-size: cover;
     font-size: 17px;
     font-family: 'Montserrat Alternates', sans-serif;
-    margin: 50px;
+    margin: 20px;
+    /* Essa margin que esta determinado o espaçamento lateral em telas pequenas */
 }
 
 header {
@@ -13,12 +21,14 @@ header {
     padding-bottom: 10px;
 }
 
+/* Com o max-width, podemos colocar um valor maximo para o form, assim ele vai ser de no maximo 600px, mas se precisar ele vai encolher */
+
 #survey-form {
     background-color: GAINSBORO;
     border-radius: 20px;
     margin-top: 40px;
     padding: 30px;
-    width: 40vw;
+    max-width: 600px;
     margin: auto;
 }
 
@@ -33,7 +43,11 @@ input[type=text], [type=email], [type=number], textarea, select {
     margin-top: 5px;
     outline: 0;
     padding: 8px;
-    width: 70%;
+    width: 100%;
+}
+
+select, input[type=checkbox], input[type=radio] {
+    cursor: pointer;
 }
 
 textarea {
@@ -47,11 +61,6 @@ button {
     font-size: 15px;
     margin-top: 10px;
     padding: 10px;
-    width: 70%;
-}
-
-@media (max-width:800px) {
-    #survey-form {
-        width: 90vw;
-    }
+    width: 100%;
+    cursor: pointer;
 }
